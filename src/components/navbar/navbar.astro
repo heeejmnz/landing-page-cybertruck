@@ -1,0 +1,105 @@
+<script>
+  const iconExit = document.querySelector("#icon-exit");
+  const iconMenu = document.querySelector("#icon-menu");
+  const navbar: HTMLElement | null = document.querySelector("#navbar-items");
+
+  iconMenu?.addEventListener("click", () => addNavbar(navbar));
+
+  iconExit?.addEventListener("click", () => addNavbar(navbar));
+
+  function addNavbar(navbar: HTMLElement | null) {
+    if (navbar?.classList.contains("hidden")) {
+      navbar?.classList.remove("hidden");
+      navbar?.classList.add("flex");
+    } else {
+      navbar?.classList.remove("flex");
+      navbar?.classList.add("hidden");
+    }
+  }
+</script>
+<nav
+  class="text-white flex items-center justify-between fixed top-0 right-0 left-0 w-full max-w-screen bg-black/25 backdrop-blur-xl z-50 lg:p-5"
+  id="navbar"
+>
+  <a href="#" class="p-5 lg:p-0">
+    <img class="w-36" src="/tesla-logo.svg" alt="Tesla Logo" />
+  </a>
+  <div
+    id="navbar-items"
+    class="absolute lg:relative top-0 hidden gap-0 lg:flex flex-col lg:flex-row lg:justify-center w-full bg-black lg:bg-transparent h-screen lg:h-auto"
+  >
+    <button class="ml-auto p-3 lg:hidden" id="icon-exit">Exit</button>
+    <ul class="lg:flex navbar-list lg:gap-5">
+      <li>
+        <a
+          href="#"
+          class="block lg:inline p-5 lg:p-2 lg:rounded-md hover:bg-white/5 transition-colors duration-300"
+          >Vehicles</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block lg:inline p-5 lg:p-2 lg:rounded-md hover:bg-white/5 transition-colors duration-300"
+          >Energy</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block lg:inline p-5 lg:p-2 lg:rounded-md hover:bg-white/5 transition-colors duration-300"
+          >Charging</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block lg:inline p-5 lg:p-2 lg:rounded-md hover:bg-white/5 transition-colors duration-300"
+          >Discover</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="block lg:inline p-5 lg:p-2 lg:rounded-md hover:bg-white/5 transition-colors duration-300"
+          >Shop</a
+        >
+      </li>
+    </ul>
+    <ul class="block lg:hidden">
+      <li>
+        <a
+          href="#"
+          class="flex gap-4 p-5 hover:bg-white/5 transition-colors duration-300"
+          ><img src="/icon-help.svg" alt="Icon Help" />Help</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="flex gap-4 p-5 hover:bg-white/5 transition-colors duration-300"
+          ><img src="/icon-globe.svg" alt="Icon Globe" />Language</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          class="flex gap-4 p-5 hover:bg-white/5 transition-colors duration-300"
+          ><img src="/icon-user.svg" alt="Icon User" />Login</a
+        >
+      </li>
+    </ul>
+  </div>
+  <button class="p-5 lg:hidden" id="icon-menu">Menu</button>
+  <ul class="hidden lg:flex lg:gap-5">
+    <li>
+      <a href="#"><img class="w-8" src="/icon-help.svg" alt="Icon Help" /></a>
+    </li>
+    <li>
+      <a href="#"><img class="w-8" src="/icon-globe.svg" alt="Icon Globe" /></a>
+    </li>
+    <li>
+      <a href="#"><img class="w-8" src="/icon-user.svg" alt="Icon User" /></a>
+    </li>
+  </ul>
+</nav>

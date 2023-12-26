@@ -2,11 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import { Scene } from "../components/header/Scene.tsx";
 import Features from "../components/features/features.astro";
+import Navbar from "../components/navbar/navbar.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <div class="w-full h-screen relative">
+  <header class="w-full h-screen relative">
+    <Navbar />
     <Scene client:only="react" />
     <Features />
-  </div>
+  </header>
 </Layout>
