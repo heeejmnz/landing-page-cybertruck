@@ -1,0 +1,33 @@
+<script>
+  import gsap from "gsap";
+
+  const counters = document.querySelectorAll(".animate-text span");
+
+  gsap.from(counters, {
+    textContent: 0,
+    duration: 5,
+    ease: "power4.out",
+    snap: { textContent: 1 },
+  });
+</script>
+
+<div
+  class="text-white grid lg:flex justify-center lg:justify-between align-center grid-cols-2 gap-5 lg:gap-0 text-center backdrop-blur-xl bg-black/25 py-2 px-4 rounded-xl border border-white/10"
+>
+  <div>
+    <h3 class="font-thin uppercase opacity-50">Est-Range</h3>
+    <p class="font-thin uppercase animate-text"><span>320</span> mi</p>
+  </div>
+  <div>
+    <h3 class="font-thin uppercase opacity-50">0-60 mph</h3>
+    <p class="font-thin uppercase animate-text"><span>2,</span> sec</p>
+  </div>
+  <div>
+    <h3 class="font-thin uppercase opacity-50">TOWING CAPACITY</h3>
+    <p class="font-thin uppercase animate-text"><span>11000</span> lbs</p>
+  </div>
+  <div>
+    <h3 class="font-thin uppercase opacity-50">TOP SPEED</h3>
+    <p class="font-thin uppercase animate-text"><span>130</span> mph</p>
+  </div>
+</div>
