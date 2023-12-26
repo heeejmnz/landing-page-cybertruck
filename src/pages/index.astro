@@ -1,0 +1,12 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Scene } from "../components/header/Scene.tsx";
+import Features from "../components/features/features.astro";
+---
+
+<Layout title="Welcome to Astro.">
+  <div class="w-full h-screen relative">
+    <Scene client:only="react" />
+    <Features />
+  </div>
+</Layout>
