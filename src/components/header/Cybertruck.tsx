@@ -2,6 +2,7 @@ import * as THREE from "three";
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import * as GLTFLIB from "three-stdlib";
+import { useThree } from "@react-three/fiber";
 
 type GLTFResult = GLTFLIB.GLTF & {
   nodes: {
@@ -35,6 +36,7 @@ export function Cybertruck(props: JSX.IntrinsicElements["group"]) {
   const { nodes, materials } = useGLTF(
     "/modelo-3d/cybertruck.gltf",
   ) as GLTFResult;
+
   return (
     <group {...props} dispose={null} rotation={[0, 1.5, 0]} scale={0.5}>
       <mesh
