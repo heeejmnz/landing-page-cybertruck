@@ -1,3 +1,7 @@
+---
+import IconX from "../../icons/icon-x.astro";
+---
+
 <script>
   const iconExit = document.querySelector("#icon-exit");
   const iconMenu = document.querySelector("#icon-menu");
@@ -28,7 +32,12 @@
     id="navbar-items"
     class="absolute lg:relative top-0 hidden gap-0 lg:flex flex-col lg:flex-row lg:justify-center w-full bg-black lg:bg-transparent h-screen lg:h-auto"
   >
-    <button class="ml-auto p-3 lg:hidden" id="icon-exit">Exit</button>
+    <button
+      class="ml-auto p-3 lg:hidden rounded-md border border-white/50 mt-5 mr-4 bg-white/5 hover:bg-white/15 transition-colors"
+      id="icon-exit"
+    >
+      <IconX />
+    </button>
     <ul class="lg:flex navbar-list lg:gap-5">
       <li>
         <a
@@ -71,7 +80,7 @@
         <a
           href="#"
           class="flex gap-4 p-5 hover:bg-white/5 transition-colors duration-300"
-          ><img src="/icon-help.svg" alt="Icon Help" />Help</a
+          ><img src="/icon-user.svg" alt="Icon User" />Login</a
         >
       </li>
       <li>
@@ -85,7 +94,7 @@
         <a
           href="#"
           class="flex gap-4 p-5 hover:bg-white/5 transition-colors duration-300"
-          ><img src="/icon-user.svg" alt="Icon User" />Login</a
+          ><img src="/icon-help.svg" alt="Icon Help" />Help</a
         >
       </li>
     </ul>
@@ -93,13 +102,13 @@
   <button class="p-5 lg:hidden" id="icon-menu">Menu</button>
   <ul class="hidden lg:flex lg:gap-5">
     <li>
-      <a href="#"><img class="w-8" src="/icon-help.svg" alt="Icon Help" /></a>
+      <a href="#"><img class="w-8" src="/icon-user.svg" alt="Icon User" /></a>
     </li>
     <li>
       <a href="#"><img class="w-8" src="/icon-globe.svg" alt="Icon Globe" /></a>
     </li>
     <li>
-      <a href="#"><img class="w-8" src="/icon-user.svg" alt="Icon User" /></a>
+      <a href="#"><img class="w-8" src="/icon-help.svg" alt="Icon Help" /></a>
     </li>
   </ul>
 </nav>

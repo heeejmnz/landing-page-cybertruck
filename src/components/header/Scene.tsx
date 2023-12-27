@@ -87,7 +87,6 @@ function Content() {
         <Image
           url="/logo-cybertruck.png"
           transparent
-          opacity={0.8}
           position={[0, 1.2, -1]}
           scale={[w / 2, h / 2 - (active ? 1.2 : 0.8)]}
         />
