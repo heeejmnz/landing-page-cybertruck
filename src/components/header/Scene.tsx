@@ -13,7 +13,6 @@ import {
 } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { easing } from "maath";
-import { Video } from "./Video";
 
 export function Scene() {
   return (
@@ -21,12 +20,6 @@ export function Scene() {
       <Lights />
       <Camera />
       <Content />
-      {/* <mesh scale={1} position={[-2, 0.5, -0.6]} rotation={[0, 0.5, 0]}> */}
-      {/*   <planeGeometry width={1070} height={1000} /> */}
-      {/*   <Suspense fallback={<meshBasicMaterial wireframe />}> */}
-      {/*     <Video /> */}
-      {/*   </Suspense> */}
-      {/* </mesh> */}
       <EffectComposer disableNormalPass>
         <Bloom
           luminanceThreshold={0}
@@ -42,13 +35,16 @@ export function Scene() {
 }
 
 function CameraRig() {
+  const [active, setActive] = useState(
+    window.matchMedia("(max-width: 720px)").matches,
+  );
   useFrame((state, delta) => {
     easing.damp3(
       state.camera.position,
       [
         8 + (state.pointer.x * state.viewport.width) / 4 - 8,
         (0.4 + state.pointer.y) / 2,
-        5,
+        active ? 7 : 5,
       ],
       0.2,
       delta,
@@ -78,7 +74,7 @@ function Content() {
   const { viewport } = useThree();
 
   return (
-    <Center position={[0, active ? 0.8 : 1, 0]}>
+    <Center position={[0, active ? 0.8 : 1.2, 0]}>
       <Resize
         width
         height
